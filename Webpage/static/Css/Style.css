@@ -1,0 +1,15 @@
+.btn
+{
+    background-color:#2BDED0;
+    padding: 8px;
+
+}
+
+.btn:hover
+{
+    background-color: #DED92B;
+}
+
+body {
+    background-color: D2D1BC;
+  }
