@@ -18,8 +18,26 @@ pipeline{
         stage("checkout SCM"){
             steps{
                 script{
-                    git credentialsId: 'github'
-                    url: 'https://github.com/Rajuc3/Argocd_CI_proj.git'
+                    git credentialsId: 'github',
+                    url: 'https://github.com/Rajuc3/Argocd_CI_proj.git',
+                    branch: 'master'
+                }
+            }
+        }
+        stage("Build docker image"){
+            steps{
+                script{
+                    docker_image=docker.build"${IMAGE_NAME}"
+                }
+            }
+        }
+        stage("Push docker image"){
+            steps{
+                script{
+                    docker.withRegistry('',REGISTRY_CREDS){
+                    docker_image.push("$BUILD_NUMBER")
+                    docker_image.push('latest')
+                    }
                 }
             }
         }
