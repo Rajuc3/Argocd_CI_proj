@@ -66,7 +66,7 @@ pipeline{
                     sh """
                       git config --global user.name "Rajuc3"
                       git config --global user.email "raju.cheviti26@gmail.com"
-                      git add eks.py
+                      git add deployment.yml
                       git commit -m "adding the eks file"
 
                     """
