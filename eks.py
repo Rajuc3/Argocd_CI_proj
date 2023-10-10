@@ -23,7 +23,11 @@ deployment = client.V1Deployment(
                 containers=[
                     client.V1Container(
                         name="my-flask-container",
+<<<<<<< HEAD
                         image="rajuc26/argocd_ci:v1",
+=======
+                        image="rajuc26/argocd_ci:5
+>>>>>>> b1cb004a6bcaf4874eb3e98e7d9d58bbabb7e070
                         ports=[client.V1ContainerPort(container_port=5000)]
                     )
                 ]
