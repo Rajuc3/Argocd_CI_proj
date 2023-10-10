@@ -54,7 +54,7 @@ pipeline{
                 script{
                     sh """
                      cat eks.py
-                     sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' eks.py
+                     sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yml
                      cat eks.py
                     """
                 }
